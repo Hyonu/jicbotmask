@@ -17,7 +17,7 @@ def help_command(update, context):
 
 def main():
     load_model()
-    updater = Updater(token="1383569100:AAFvzKVpq1ptELh165jr8d-eF21csC95gKQ", use_context=True)
+    updater = Updater(token="1403462712:AAGGdNiN83i7y3CWaEaadxoxJgu_4LFCo0o", use_context=True)
     dp = updater.dispatcher    
     dp.add_handler(CommandHandler("start", start))
     dp.add_handler(CommandHandler("help", help_command)) 
