@@ -22,13 +22,10 @@ def main():
     dp.add_handler(CommandHandler("help", help_command))    
     updater.start_polling()
     updater.idle()
-    
-    if __name__ == '__main__':
-     main()
 
 def load_model():
     global model
-    model = load_learner('/model.pkl')
+    model = load_learner('model.pkl')
     print('Model loaded')
 
 def detect_mask(update, context):
