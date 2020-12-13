@@ -16,10 +16,12 @@ def help_command(update, context):
     update.message.reply_text('mande foto de su cara, si no tiene mascarilla es petardo')
 
 def main():
+    load_model()
     updater = Updater(token="1383569100:AAFvzKVpq1ptELh165jr8d-eF21csC95gKQ", use_context=True)
     dp = updater.dispatcher    
     dp.add_handler(CommandHandler("start", start))
-    dp.add_handler(CommandHandler("help", help_command))    
+    dp.add_handler(CommandHandler("help", help_command)) 
+    dp.add_handler(MessageHandler(Filters.photo, detect_mask))   
     updater.start_polling()
     updater.idle()
 
